@@ -24,8 +24,7 @@ run_button=st.button("Run")
 
 if run_button:
 
-  df_aux=pd.read_excel(excel_data,sheet_name=graph_select,usecols= [0,1,3,4,6,7,9,10,12,13],header=0,
-                       names=["S1_d","S1_f","S2_d","S2_f","S3_d","S3_f","S4_d","S4_f","S5_d","S5_f"])
+  df_aux=pd.read_excel(excel_data,sheet_name=graph_select,usecols= [0,1,3,4,6,7,9,10,12,13],header=0,names=["S1_d","S1_f","S2_d","S2_f","S3_d","S3_f","S4_d","S4_f","S5_d","S5_f"])
 
   df_chosen=df_aux.dropna()
   st.dataframe(df_chosen)
