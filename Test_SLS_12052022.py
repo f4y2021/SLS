@@ -4,6 +4,23 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN 
 ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION 
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."""
+#Formatar Ficheiro Excel
+import openpyxl
+from openpyxl.styles import Font
+from openpyxl.styles import Alignment
+from openpyxl.styles import Color, PatternFill, Font, Border
+from openpyxl.styles import colors
+from openpyxl.styles.borders import Border, Side
+from openpyxl.cell import Cell
+from openpyxl.writer.excel import save_virtual_workbook
+
+from openpyxl.chart import (
+  LineChart,
+  BarChart,
+  ScatterChart,
+  Reference,
+  Series,
+)
 
 import streamlit as st
 
