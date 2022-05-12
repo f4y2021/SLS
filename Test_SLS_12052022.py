@@ -18,7 +18,8 @@ second_choice = st.selectbox('Select Sample #2',('C11', 'C12', 'C21', 'C22'))
 graph_select=first_choice+"_"+second_choice
 st.write('You selected:', graph_select)
 
-excel_data="SLS_Adhesive_Results3.xlsx"
+excel_data=st.file_uploader("Choose data file")
+
 run_button=st.button("Run")
 
 if run_button:
