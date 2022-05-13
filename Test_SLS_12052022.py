@@ -24,7 +24,7 @@ st.set_page_config(page_title="SLS Tests",page_icon="⏩")
 m = st.markdown("""
 <style>
 div.stButton > button:first-child {
-    <h1 style='text-align: center;font-size:16px;font-weight:bold;height:2em;width:7em;
+    font-size:16px;font-weight:bold;height:2em;width:7em;
 }
 </style>""", unsafe_allow_html=True)
 
