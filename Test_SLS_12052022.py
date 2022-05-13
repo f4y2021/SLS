@@ -39,8 +39,9 @@ if run_button:
   #fig.add_trace(go.scatter(x=df_chosen.columns[3], y=df_chosen.columns[4]))
   
   for i in range (0,13,3):
+    b=i+1
     fig = go.Figure()
-    fig.add_trace(go.Scatter(x=pd.DataFrame(data=df_chosen, columns=[i]), y=pd.DataFrame(data=df_chosen, columns=[i+1])))
+    fig.add_trace(go.Scatter(x=pd.DataFrame(data=df_chosen, columns=[i]), y=pd.DataFrame(data=df_chosen, columns=[b])))
 
   st.plotly_chart(fig)
   #for i in range (1,6):
