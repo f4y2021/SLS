@@ -32,6 +32,12 @@ st.image('f4y_logo.png')
 
 st.markdown("<h1 style='text-align: center; font-size:48px;font-weight:bold;'>SLS Connection Analysis</h1>", unsafe_allow_html=True)
 
+with st.sidebar:
+    st.write("I know:")
+    yn_substrates= st.checkbox('Substrate I want to join')
+    yn_tech= st.checkbox('Joining Technology I want to use')
+    yn_max_load=st.checkbox('Maximum allowable load of my joint')
+
 with st.expander("I know the substrates I want to join"):
     col11, col22 = st.columns(2)
     with col11:
