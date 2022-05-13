@@ -34,7 +34,7 @@ if run_button:
   df_chosen=df_aux.dropna()
   st.dataframe(df_chosen)
   fig = px.line(df_chosen, x=df_chosen.columns[0], y=df_chosen.columns[1])
-  fig.add_trace(px.line(df_chosen,x=df_chosen.columns[3], y=df_chosen.columns[4]))
+  fig.add_trace(go.scatter(df_chosen,x=df_chosen.columns[3], y=df_chosen.columns[4]))
   #for i in range (3,13,3):
     #fig.add_trace(px.line(x=df_chosen.columns[i], y=df_chosen.columns[i+1]))
 
