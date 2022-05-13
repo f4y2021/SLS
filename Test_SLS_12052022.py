@@ -34,9 +34,8 @@ if run_button:
   st.dataframe(df_chosen)
   fig = px.line(df_chosen, x=df_chosen.columns[0], y=df_chosen.columns[1])
   for i in range (3,13,3):
-    fig.add_trace(px.line(x=df_chosen.columns[i], y=df_chosen.columns[i+1]))
-  #fig=df_chosen.plot(x="S1_d",y="S1_f")
-  #st.pyplot(fig)
+    fig.add_trace(go.Scatter(df_chosen,x=df_chosen.columns[i], y=df_chosen.columns[i+1]))
+
   st.plotly_chart(fig)
 
 
