@@ -34,7 +34,7 @@ if run_button:
 
   df_chosen=df_aux.dropna()
   st.dataframe(df_chosen)
-  fig = px.line(df_chosen, x=df_chosen.columns[0,3,6,9,12], y=df_chosen.columns[1,4,7,10,13])
+  fig = px.line(df_chosen, x=df_chosen.columns[0], y=df_chosen.columns[1,4,7,10,13])
   st.plotly_chart(fig)
   #fig.add_trace(go.scatter(x=df_chosen.columns[3], y=df_chosen.columns[4]))
 
