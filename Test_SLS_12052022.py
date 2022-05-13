@@ -33,11 +33,11 @@ if run_button:
   df_chosen=df_aux.dropna()
   st.dataframe(df_chosen)
   fig = px.line(df_chosen, x=df_chosen.columns[0], y=df_chosen.columns[1])
-  for i in range (0,13,3):
-    fig.add_trace(px.line(df_chosen, x=df_chosen.columns[i], y=df_chosen.columns[i+1])
+  #for i in range (0,13,3):
+    #fig.add_trace(px.line(df_chosen, x=df_chosen.columns[i], y=df_chosen.columns[i+1])
   #fig=df_chosen.plot(x="S1_d",y="S1_f")
   #st.pyplot(fig)
-  st.plotly_chart(fig, use_container_width=True)
+  st.plotly_chart(fig)
 
 
 
