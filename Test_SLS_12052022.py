@@ -37,11 +37,11 @@ if run_button:
   #fig = px.line(df_chosen, x=df_chosen.columns[0], y=df_chosen.columns[1])
   #st.plotly_chart(fig)
   #fig.add_trace(go.scatter(x=df_chosen.columns[3], y=df_chosen.columns[4]))
-  
+  fig = go.Figure()
   for i in range (0,13,3):
-    b=i+1
-    fig = go.Figure()
-    fig.add_trace(go.Scatter(x=pd.DataFrame(data=df_chosen, columns=[i]), y=pd.DataFrame(data=df_chosen, columns=[b])))
+    
+    fig.add_trace(go.Scatter(x=pd.DataFrame(data=df_chosen, columns=[i]), y=pd.DataFrame(data=df_chosen, columns=[i+1])))
+
 
   st.plotly_chart(fig)
   #for i in range (1,6):
