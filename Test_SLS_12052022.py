@@ -21,10 +21,13 @@ import sys
 
 st.set_page_config(page_title="SLS Tests",page_icon="⏩")
 
+st.markdown("<h1 style='text-align: center; color: red;'>Some title</h1>", unsafe_allow_html=True)
+
+
 m = st.markdown("""
 <style>
 div.stButton > button:first-child {
-    font-size:50px;font-weight:bold;height:2em;width:7em;
+    font-size:16px;font-weight:bold;height:2em;width:7em;
 }
 </style>""", unsafe_allow_html=True)
 
