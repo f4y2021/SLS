@@ -37,13 +37,8 @@ if run_button:
   #fig=df_chosen.plot(x="S1_d",y="S1_f")
   #st.pyplot(fig) 
 
-  
-  plost.line_chart(
-    df_chosen,
-    x='S1_d',
-    y=('S1_f'),
-    pan_zoom='minimap',
-  )
+  for i in range (1,6):
+    plost.line_chart(df_chosen,x="S"+str(i)+"_d",y="S"+str(i)+"_f")
 #for i in range (1,6):
     #df_chosen.plot(ax=ax,x="S"+str(i)+"_d",y="S"+str(i)+"_f")
 
