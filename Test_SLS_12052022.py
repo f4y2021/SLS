@@ -36,9 +36,9 @@ if run_button:
     #df_chosen.plot(ax=ax,x="S"+str(i)+"_d",y="S"+str(i)+"_f")
   #fig=df_chosen.plot(x="S1_d",y="S1_f")
   #st.pyplot(fig) 
-
-  for i in range (1,6):
-    plost.line_chart(df_chosen,x="S"+str(i)+"_d",y="S"+str(i)+"_f")
+  plost.line_chart(df_chosen,x=("S1_d","S2_d","S3_d","S4_d","S5_d"),y=("S1_f","S2_f","S3_f","S4_f","S5_f"))
+  #for i in range (1,6):
+    #plost.line_chart(df_chosen,x="S"+str(i)+"_d",y="S"+str(i)+"_f")
 #for i in range (1,6):
     #df_chosen.plot(ax=ax,x="S"+str(i)+"_d",y="S"+str(i)+"_f")
 
