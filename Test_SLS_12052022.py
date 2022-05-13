@@ -35,8 +35,10 @@ if run_button:
   #for i in range (1,6):
     #df_chosen.plot(ax=ax,x="S"+str(i)+"_d",y="S"+str(i)+"_f")
   #fig=df_chosen.plot(x="S1_d",y="S1_f")
-  #st.pyplot(fig) 
-  plost.line_chart(df_chosen,x=("S1_d"),y=("S1_f","S2_f","S3_f","S4_f","S5_f"))
+  #st.pyplot(fig)
+  fig = px.line(df_chosen, x='S1_d', y="S1_f")
+  st.plotly_chart(fig, use_container_width=True)
+  #plost.line_chart(df_chosen,x=("S1_d"),y=("S1_f","S2_f","S3_f","S4_f","S5_f"))
   #for i in range (1,6):
     #plost.line_chart(df_chosen,x="S"+str(i)+"_d",y="S"+str(i)+"_f")
 #for i in range (1,6):
