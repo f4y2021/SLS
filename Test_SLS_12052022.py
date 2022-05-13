@@ -32,9 +32,9 @@ st.image('f4y_logo.png')
 st.title('SLS Connection Analysis')
 
 col11, col22 = st.columns(2)
-with col11
+with col11:
     first_choice = st.selectbox('Select Sample #1',('C11', 'C12', 'C21', 'C22'))
-with col22
+with col22:
     second_choice = st.selectbox('Select Sample #2',('C11', 'C12', 'C21', 'C22'))
 
 #first_choice = st.selectbox('Select Sample #1',('C11', 'C12', 'C21', 'C22'))
