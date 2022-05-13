@@ -7,6 +7,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."""
 #Formatar Ficheiro Excel
 import openpyxl
 import plost
+import plotly.express as px 
 
 import streamlit as st
 
