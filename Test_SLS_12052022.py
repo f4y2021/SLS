@@ -41,7 +41,6 @@ if run_button:
     fig=df_chosen.plot(ax=ax,x="S"+str(i)+"_d",y="S"+str(i)+"_f")
   #for i in range (3,13,3):
     #fig.add_trace(px.line(x=df_chosen.columns[i], y=df_chosen.columns[i+1]))
-  st.pyplot(fig)
 
 
 
