@@ -33,8 +33,7 @@ if run_button:
   
   #for i in range (1,6):
     #df_chosen.plot(ax=ax,x="S"+str(i)+"_d",y="S"+str(i)+"_f")
-  ax = plt.gca()
-  fig=df_chosen.plot(ax=ax,x="S1_d",y="S1_f")
+  fig=df_chosen.plot(x="S1_d",y="S1_f")
   st.pyplot(fig) 
 
 #for i in range (1,6):
