@@ -23,7 +23,7 @@ first_choice = st.selectbox('Select Sample #1',('C11', 'C12', 'C21', 'C22'))
 second_choice = st.selectbox('Select Sample #2',('C11', 'C12', 'C21', 'C22'))
 graph_select=first_choice+"_"+second_choice
 st.write('You selected:', graph_select)
-
+area=312.5
 run_button=st.button("Run")
 
 if run_button:
@@ -32,7 +32,9 @@ if run_button:
 
   df_chosen=df_aux.dropna()
   st.dataframe(df_chosen)
-
+  avg_max_load=1
+  avg_max_disp=23
+  avg_lap_shear=3
   fig = go.Figure()
   
   for i in range (1,6):
@@ -46,8 +48,8 @@ if run_button:
   st.plotly_chart(fig)
  
   col1, col2, col3 = st.columns(3)
-  col1.metric("Temperature", "70 °F", "1.2 °F")
-  col2.metric("Wind", "9 mph", "-8%")
-  col3.metric("Humidity", "86%", "4%")
+  col1.metric("Maximum Load (N)", avg_max_load, "1.2 °F")
+  col2.metric("Maximum Displacement (mm)",avg_max_disp, "-8%")
+  col3.metric("Lap Shear Strength (MPa)",avg_lap_shear, "4%")
 
 
