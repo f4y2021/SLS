@@ -4,7 +4,7 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN 
 ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION 
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."""
-#Formatar Ficheiro Excel
+
 import openpyxl
 import plost
 import plotly.express as px 
@@ -24,8 +24,6 @@ second_choice = st.selectbox('Select Sample #2',('C11', 'C12', 'C21', 'C22'))
 graph_select=first_choice+"_"+second_choice
 st.write('You selected:', graph_select)
 
-#excel_data=st.file_uploader("Choose data file")
-
 run_button=st.button("Run")
 
 if run_button:
@@ -34,21 +32,19 @@ if run_button:
 
   df_chosen=df_aux.dropna()
   st.dataframe(df_chosen)
-  #fig = px.line(df_chosen, x=df_chosen.columns[0], y=df_chosen.columns[1])
-  #st.plotly_chart(fig)
-  #fig.add_trace(go.scatter(x=df_chosen.columns[3], y=df_chosen.columns[4]))
+
   fig = go.Figure()
+  
   for i in range (1,6):
     col_name_d = "S"+str(i)+"_d"
     col_name_f = "S"+str(i)+"_f"
     fig.add_trace(go.Scatter(x=df_chosen[col_name_d], y=df_chosen[col_name_f],
                   mode='lines',name="S"+str(i)))
+  fig.update_layout(title='SLS Results',
+                   xaxis_title='Displacement',
+                   yaxis_title='Max Load')
   st.plotly_chart(fig)
-  #for i in range (1,6):
-      #df_chosen.plot(ax=ax,x="S"+str(i)+"_d",y="S"+str(i)+"_f")
-  #for i in range (3,13,3):
-    #fig.add_trace(px.line(x=df_chosen.columns[i], y=df_chosen.columns[i+1]))
-
+ 
 
 
 
