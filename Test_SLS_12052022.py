@@ -40,7 +40,7 @@ if run_button:
   
   for i in range (0,13,3):
     fig = go.Figure()
-    fig.add_trace(go.Scatter(x=pd.DataFrame(data=df_chosen, columns=i), y=pd.DataFrame(data=df_chosen, columns=i+1),mode='lines',name='lines'))
+    fig.add_trace(go.Scatter(x=pd.DataFrame(data=df_chosen, columns=[i]), y=pd.DataFrame(data=df_chosen, columns=[i+1]),mode='lines',name='lines'))
 
   st.plotly_chart(fig)
   #for i in range (1,6):
