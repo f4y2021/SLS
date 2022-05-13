@@ -32,7 +32,8 @@ if run_button:
 
   df_chosen=df_aux.dropna()
   st.dataframe(df_chosen)
-  avg_max_load=1
+  avg_max_load=(df_chosen["S1_f"].max()+df_chosen["S2_f"].max()+df_chosen["S3_f"].max()+df_chosen["S4_f"].max()+df_chosen["S5_f"].max())/5
+
   avg_max_disp=23
   avg_lap_shear=3
   fig = go.Figure()
@@ -48,8 +49,8 @@ if run_button:
   st.plotly_chart(fig)
  
   col1, col2, col3 = st.columns(3)
-  col1.metric("Maximum Load (N)", avg_max_load, "1.2 °F")
-  col2.metric("Maximum Displacement (mm)",avg_max_disp, "-8%")
-  col3.metric("Lap Shear Strength (MPa)",avg_lap_shear, "4%")
+  col1.metric("Maximum Load (N)", avg_max_load)
+  col2.metric("Maximum Displacement (mm)",avg_max_disp)
+  col3.metric("Lap Shear Strength (MPa)",avg_lap_shear)
 
 
