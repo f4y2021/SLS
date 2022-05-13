@@ -36,8 +36,7 @@ if run_button:
   st.dataframe(df_chosen)
   #fig = px.line(df_chosen, x=df_chosen.columns[0], y=df_chosen.columns[1])
   #fig.add_trace(go.scatter(x=df_chosen.columns[3], y=df_chosen.columns[4]))
-  ax = plt.gca()
-  fig = plt.figure(figsize = (10, 5))
+  fig, ax = plt.subplots()
   for i in range (1,6):
     fig=df_chosen.plot(ax=ax,x="S"+str(i)+"_d",y="S"+str(i)+"_f")
   st.pyplot(fig)
