@@ -42,8 +42,7 @@ if run_button:
     col_name_d = "S"+str(i)+"_d"
     col_name_f = "S"+str(i)+"_f"
     fig.add_trace(go.Scatter(x=df_chosen[col_name_d], y=df_chosen[col_name_f],
-                  mode='lines', # 'lines' or 'markers'
-                  name=col_name))
+                  mode='lines'))
   st.plotly_chart(fig)
   #for i in range (1,6):
       #df_chosen.plot(ax=ax,x="S"+str(i)+"_d",y="S"+str(i)+"_f")
