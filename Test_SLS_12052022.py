@@ -41,10 +41,13 @@ if run_button:
     fig.add_trace(go.Scatter(x=df_chosen[col_name_d], y=df_chosen[col_name_f],
                   mode='lines',name="S"+str(i)))
   fig.update_layout(title='SLS Results',
-                   xaxis_title='Displacement',
-                   yaxis_title='Max Load',template='ggplot2')
+                   xaxis_title='Displacement (mm)',
+                   yaxis_title='Load (N)',template="plotly_dark")
   st.plotly_chart(fig)
  
-
+  col1, col2, col3 = st.columns(3)
+  col1.metric("Temperature", "70 °F", "1.2 °F")
+  col2.metric("Wind", "9 mph", "-8%")
+  col3.metric("Humidity", "86%", "4%")
 
 
