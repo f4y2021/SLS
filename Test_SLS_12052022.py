@@ -21,7 +21,7 @@ import sys
 
 st.set_page_config(page_title="SLS Tests",page_icon="⏩")
 
-st.markdown("<h1 style='text-align: center; color: red;'>Some title</h1>", unsafe_allow_html=True)
+
 
 
 m = st.markdown("""
@@ -32,8 +32,8 @@ div.stButton > button:first-child {
 </style>""", unsafe_allow_html=True)
 
 st.image('f4y_logo.png')
-st.title('SLS Connection Analysis')
 
+st.markdown("<h1 style='text-align: center; font-size:16px;font-weight:bold;'>SLS Connection Analysis</h1>", unsafe_allow_html=True)
 col11, col22 = st.columns(2)
 with col11:
     first_choice = st.selectbox('Select Substrate #1',('C11', 'C12', 'C21', 'C22'))
