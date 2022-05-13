@@ -32,7 +32,7 @@ st.image('f4y_logo.png')
 
 st.markdown("<h1 style='text-align: center; font-size:48px;font-weight:bold;'>SLS Connection Analysis</h1>", unsafe_allow_html=True)
 
-with st.expander("I Know the substrates I want to Connect"):
+with st.expander("I know the substrates I want to join"):
     col11, col22 = st.columns(2)
     with col11:
         first_choice = st.selectbox('Select Substrate #1',('C11', 'C12', 'C21', 'C22'))
