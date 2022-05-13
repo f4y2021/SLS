@@ -38,14 +38,15 @@ if run_button:
   #st.plotly_chart(fig)
   #fig.add_trace(go.scatter(x=df_chosen.columns[3], y=df_chosen.columns[4]))
   fig = go.Figure()
-  fig.add_trace(go.Scatter(x=S1_d, y=S1_f,
+  fig.add_trace(go.Scatter(x=df_chosen.columns[0], y=df_chosen.columns[1],
                     mode='lines',
                     name='lines'))
-  fig.add_trace(go.Scatter(x=S2_d, y=S2_f,
+  fig.add_trace(go.Scatter(x=df_chosen.columns[3], y=df_chosen.columns[4],
                     mode='lines',
                     name='lines'))
-  fig.add_trace(go.Scatter(x=S3_d, y=S3_f,
-                    mode='lines', name='lines'))
+  fig.add_trace(go.Scatter(x=df_chosen.columns[6], y=df_chosen.columns[7],
+                    mode='lines',
+                    name='lines'))
   st.plotly_chart(fig)
   #for i in range (1,6):
       #df_chosen.plot(ax=ax,x="S"+str(i)+"_d",y="S"+str(i)+"_f")
