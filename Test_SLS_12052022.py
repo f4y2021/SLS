@@ -6,6 +6,7 @@ ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."""
 #Formatar Ficheiro Excel
 import openpyxl
+import plost
 
 import streamlit as st
 
