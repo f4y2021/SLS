@@ -42,7 +42,7 @@ if run_button:
                   mode='lines',name="S"+str(i)))
   fig.update_layout(title='SLS Results',
                    xaxis_title='Displacement (mm)',
-                   yaxis_title='Load (N)',template="plotly_dark")
+                   yaxis_title='Load (N)',template="seaborn")
   st.plotly_chart(fig)
  
   col1, col2, col3 = st.columns(3)
