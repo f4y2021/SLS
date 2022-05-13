@@ -19,6 +19,18 @@ import pandas as pd
 import re
 import sys
 
+st.set_page_config(page_title="SLS Tests",page_icon="⏩")
+
+m = st.markdown("""
+<style>
+div.stButton > button:first-child {
+    font-size:16px;font-weight:bold;height:2em;width:7em;
+}
+</style>""", unsafe_allow_html=True)
+
+st.image('f4y_logo.png')
+st.title('Single-Lap Shear Connection Analysis')
+
 first_choice = st.selectbox('Select Sample #1',('C11', 'C12', 'C21', 'C22'))
 second_choice = st.selectbox('Select Sample #2',('C11', 'C12', 'C21', 'C22'))
 graph_select=first_choice+"_"+second_choice
