@@ -9,6 +9,7 @@ import openpyxl
 import plost
 import plotly.express as px 
 import plotly.graph_objects as go
+import matplotlib.pyplot as plt
 
 import streamlit as st
 
@@ -33,8 +34,10 @@ if run_button:
 
   df_chosen=df_aux.dropna()
   st.dataframe(df_chosen)
-  fig = px.line(df_chosen, x=df_chosen.columns[0], y=df_chosen.columns[1])
-  fig.add_trace(go.scatter(x=df_chosen.columns[3], y=df_chosen.columns[4]))
+  #fig = px.line(df_chosen, x=df_chosen.columns[0], y=df_chosen.columns[1])
+  #fig.add_trace(go.scatter(x=df_chosen.columns[3], y=df_chosen.columns[4]))
+  for i in range (1,6):
+    df_chosen.plot(ax=ax,x="S"+str(i)+"_d",y="S"+str(i)+"_f")
   #for i in range (3,13,3):
     #fig.add_trace(px.line(x=df_chosen.columns[i], y=df_chosen.columns[i+1]))
 
