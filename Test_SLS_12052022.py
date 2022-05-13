@@ -21,9 +21,6 @@ import sys
 
 st.set_page_config(page_title="SLS Tests",page_icon="⏩")
 
-
-
-
 m = st.markdown("""
 <style>
 div.stButton > button:first-child {
@@ -36,9 +33,9 @@ st.image('f4y_logo.png')
 st.markdown("<h1 style='text-align: center; font-size:48px;font-weight:bold;'>SLS Connection Analysis</h1>", unsafe_allow_html=True)
 col11, col22 = st.columns(2)
 with col11:
-    first_choice = st.selectbox('Select Substrate #1',('C11', 'C12', 'C21', 'C22'))
+    first_choice = st.selectbox('Select Substrate #1',('Photocurable Acrylate Glass Fibre Thermoset', 'Epoxy Resin Glass Fibre Thermoset', 'Hot-Stamped Carbon Fibre Thermoplastic', '3D Printed Glass Fibre Thermoplastic'))
 with col22:
-    second_choice = st.selectbox('Select Substrate #2',('C11', 'C12', 'C21', 'C22'))
+    second_choice = st.selectbox('Select Substrate #2',('Photocurable Acrylate Glass Fibre Thermoset', 'Epoxy Resin Glass Fibre Thermoset', 'Hot-Stamped Carbon Fibre Thermoplastic', '3D Printed Glass Fibre Thermoplastic'))
 
 #first_choice = st.selectbox('Select Sample #1',('C11', 'C12', 'C21', 'C22'))
 #second_choice = st.selectbox('Select Sample #2',('C11', 'C12', 'C21', 'C22'))
