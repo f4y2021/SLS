@@ -30,7 +30,7 @@ if run_button:
 
   df_chosen=df_aux.dropna()
   st.dataframe(df_chosen)
-  ax = plt.gca()
+  
   for i in range (1,6):
     df_chosen.plot(ax=ax,x="S"+str(i)+"_d",y="S"+str(i)+"_f")
     st.pyplot(fig)
