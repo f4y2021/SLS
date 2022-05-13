@@ -29,7 +29,7 @@ div.stButton > button:first-child {
 </style>""", unsafe_allow_html=True)
 
 st.image('f4y_logo.png')
-st.title('Single-Lap Shear Connection Analysis')
+st.title('SLS Connection Analysis')
 
 first_choice = st.selectbox('Select Sample #1',('C11', 'C12', 'C21', 'C22'))
 second_choice = st.selectbox('Select Sample #2',('C11', 'C12', 'C21', 'C22'))
