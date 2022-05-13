@@ -8,6 +8,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."""
 import openpyxl
 import plost
 import plotly.express as px 
+import plotly.graph_objects as go
 
 import streamlit as st
 
