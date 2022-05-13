@@ -37,8 +37,9 @@ if run_button:
   #fig = px.line(df_chosen, x=df_chosen.columns[0], y=df_chosen.columns[1])
   #fig.add_trace(go.scatter(x=df_chosen.columns[3], y=df_chosen.columns[4]))
   ax = plt.gca()
-  for i in range (1,6):
-    fig=df_chosen.plot(ax=ax,x="S"+str(i)+"_d",y="S"+str(i)+"_f")
+  #for i in range (1,6):
+    #fig=df_chosen.plot(ax=ax,x="S"+str(i)+"_d",y="S"+str(i)+"_f")
+  fig=df_chosen.plot(ax=ax,x="S1_d",y="S1_f") 
   st.pyplot(fig)
   #for i in range (3,13,3):
     #fig.add_trace(px.line(x=df_chosen.columns[i], y=df_chosen.columns[i+1]))
