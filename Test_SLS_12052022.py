@@ -34,7 +34,7 @@ if run_button:
   st.dataframe(df_chosen)
   avg_max_load=(df_chosen["S1_f"].max()+df_chosen["S2_f"].max()+df_chosen["S3_f"].max()+df_chosen["S4_f"].max()+df_chosen["S5_f"].max())/5
   avg_max_disp=(df_chosen["S1_d"].max()+df_chosen["S2_d"].max()+df_chosen["S3_d"].max()+df_chosen["S4_d"].max()+df_chosen["S5_d"].max())/5
-  avg_lap_shear=(df_chosen["S1_f"].max()+df_chosen["S2_f"].max()+df_chosen["S3_f"].max()+df_chosen["S4_f"].max()+df_chosen["S5_f"].max())/5*area
+  avg_lap_shear=(df_chosen["S1_f"].max()+df_chosen["S2_f"].max()+df_chosen["S3_f"].max()+df_chosen["S4_f"].max()+df_chosen["S5_f"].max())/(5*area)
   fig = go.Figure()
   
   for i in range (1,6):
