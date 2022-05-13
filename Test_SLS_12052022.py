@@ -34,10 +34,19 @@ if run_button:
 
   df_chosen=df_aux.dropna()
   st.dataframe(df_chosen)
-  fig = px.line(df_chosen, x=df_chosen.columns[0], y=(df_chosen.columns[1,4,7,10,13]))
-  st.plotly_chart(fig)
+  #fig = px.line(df_chosen, x=df_chosen.columns[0], y=df_chosen.columns[1])
+  #st.plotly_chart(fig)
   #fig.add_trace(go.scatter(x=df_chosen.columns[3], y=df_chosen.columns[4]))
-
+  fig = go.Figure()
+  fig.add_trace(go.Scatter(x=df_chosen.columns[0], y=df_chosen.columns[1],
+                    mode='lines',
+                    name='lines'))
+  fig.add_trace(go.Scatter(x=df_chosen.columns[3], y=df_chosen.columns[4],
+                    mode='lines',
+                    name='lines'))
+  fig.add_trace(go.Scatter(x=df_chosen.columns[6], y=df_chosen.columns[7],
+                    mode='lines', name='lines'))
+  st.plotly_chart(fig)
   #for i in range (1,6):
       #df_chosen.plot(ax=ax,x="S"+str(i)+"_d",y="S"+str(i)+"_f")
   #for i in range (3,13,3):
