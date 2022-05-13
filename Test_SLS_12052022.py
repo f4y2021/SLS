@@ -42,7 +42,7 @@ if run_button:
                   mode='lines',name="S"+str(i)))
   fig.update_layout(title='SLS Results',
                    xaxis_title='Displacement',
-                   yaxis_title='Max Load')
+                   yaxis_title='Max Load',template='ggplot2')
   st.plotly_chart(fig)
  
 
