@@ -40,13 +40,13 @@ if run_button:
   
   
   fig = go.Figure()
-  fig.add_trace(go.Scatter(x=pd.DataFrame(data=df_chosen, columns=[0]), y=pd.DataFrame(data=df_chosen, columns=[1]),
+  fig.add_trace(go.Scatter(x=pd.DataFrame(data=df_chosen, columns="S1_d"), y=pd.DataFrame(data=df_chosen, columns="S1_f"),
                     mode='lines',
                     name='lines'))
-  fig.add_trace(go.Scatter(x=pd.DataFrame(data=df_chosen, columns=[3]), y=pd.DataFrame(data=df_chosen, columns=[4]),
+  fig.add_trace(go.Scatter(x=pd.DataFrame(data=df_chosen, columns="S2_d"), y=pd.DataFrame(data=df_chosen, columns="S2_f"),
                     mode='lines',
                     name='lines'))
-  fig.add_trace(go.Scatter(x=pd.DataFrame(data=df_chosen, columns=[6]), y=pd.DataFrame(data=df_chosen, columns=[7]),
+  fig.add_trace(go.Scatter(x=pd.DataFrame(data=df_chosen, columns="S3_d"), y=pd.DataFrame(data=df_chosen, columns="S3_f"),
                     mode='lines',
                     name='lines'))
   st.plotly_chart(fig)
