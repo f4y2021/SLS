@@ -56,7 +56,7 @@ graph_select=first_choice+"_"+second_choice
 
 col111, col222, col333 = st.columns(3)
 with col222:
-    st.write('You selected:', graph_select)
+    st.write('You selected: ', connection_choice,'between',first_choice,'and',second_choice)
     run_button=st.button("Run")
 
 
