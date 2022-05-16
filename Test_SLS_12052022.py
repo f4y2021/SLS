@@ -79,6 +79,7 @@ if run_button:
             return df_func
         
         df_bolt=arranjar(bolt_excel_file_loc,graph_select,"bolt")
+        st.dataframe(df_bolt)
         df_hybrid=arranjar(hybrid_excel_file_loc,graph_select,"hybrid")
         df_adhesive=arranjar(adhesive_excel_file_loc,graph_select,"adhesive")
         
