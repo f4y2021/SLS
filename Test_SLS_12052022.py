@@ -47,7 +47,7 @@ with col22:
 
 connection_tech = st.checkbox('I know the connection technology')
 
-connection_choice = st.selectbox('Select connection technology',('Bolt', 'Adhesive','Hybrid'),disabled=connection_tech)
+connection_choice = st.selectbox('Select connection technology',('Bolt', 'Adhesive','Hybrid'),disabled=True)
 
 
 excel_file_loc="./data/SLS_Results_"+connection_choice+".xlsx"
