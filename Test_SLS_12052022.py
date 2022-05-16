@@ -69,10 +69,10 @@ if run_button:
     fig = go.Figure()
 
     for i in range (1,6):
-    col_name_d = "S"+str(i)+"_d"
-    col_name_f = "S"+str(i)+"_f"
-    fig.add_trace(go.Scatter(x=df_chosen[col_name_d], y=df_chosen[col_name_f],
-                  mode='lines',name="S"+str(i)))
+        col_name_d = "S"+str(i)+"_d"
+        col_name_f = "S"+str(i)+"_f"
+        fig.add_trace(go.Scatter(x=df_chosen[col_name_d], y=df_chosen[col_name_f],
+                      mode='lines',name="S"+str(i)))
     fig.update_layout(title='SLS Results',
                    xaxis_title='Displacement (mm)',
                    yaxis_title='Load (N)',template="seaborn")
