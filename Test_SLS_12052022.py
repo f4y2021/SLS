@@ -6,7 +6,7 @@ ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."""
 
 import openpyxl
-from io import BytesIO
+
 import plotly.express as px 
 import plotly.graph_objects as go
 import matplotlib.pyplot as plt
@@ -102,6 +102,6 @@ if run_button:
         'first item in ordered list', style='List Number'
     )
     
-    document = io.BytesIO()
+    streamtest = document.save()
     
-    st.download_button("Download Final Excel File",document,'demo.docx')
+    st.download_button("Download Final Excel File",streamtest,'demo.docx')
