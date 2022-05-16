@@ -43,10 +43,9 @@ with col11:
 with col22:
     second_choice = st.selectbox('Select Substrate #2',('C11', 'C12', 'C21', 'C22'))
 
-connection_tech = st.checkbox('I know the connection technology')
+connection_tech = st.checkbox('I dont know the connection technology')
 
-if connection_tech:
-    connection_choice = st.selectbox('Select connection technology',('Bolt', 'Adhesive','Hybrid'))
+connection_choice = st.selectbox('Select connection technology',('Bolt', 'Adhesive','Hybrid'),disabled=True)
 
 
 excel_file_loc="./data/SLS_Results_"+connection_choice+".xlsx"
