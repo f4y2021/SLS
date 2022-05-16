@@ -52,9 +52,14 @@ area=312.5
 excel_file_loc="./data/SLS_Results_"+connection_choice+".xlsx"
 #first_choice = st.selectbox('Select Sample #1',('C11', 'C12', 'C21', 'C22'))
 #second_choice = st.selectbox('Select Sample #2',('C11', 'C12', 'C21', 'C22'))
+
 graph_select=first_choice+"_"+second_choice
 st.write('You selected: ', connection_choice,'between',first_choice,'and',second_choice)
+
+connection_tech = st.checkbox('Not Sure Which Connection Technology I Want to Use')
+
 col111, col222, col333 = st.columns(3)
+
 with col222:
     run_button=st.button("Run")
 
