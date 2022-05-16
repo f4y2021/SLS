@@ -70,7 +70,7 @@ adhesive_excel_file_loc="./data/SLS_Results_Adhesive.xlsx"
 if run_button:
     if no_connection_tech:
         
-        def arranjar(file_loc,sheet_loc,name)
+        def arranjar(file_loc,sheet_loc,name):
             df_func=pd.read_excel(file_loc,sheet_name=sheet_loc,header=0,names=["S1_d","S1_f","S2_d","S2_f","S3_d","S3_f","S4_d","S4_f","S5_d","S5_f"])
             df_func = df_func.dropna(axis=0)
             df_func['S_d_'+name]=df_func[['S1_d','S2_d','S3_d','S4_d','S5_d']].mean(axis=1)
