@@ -35,7 +35,7 @@ st.markdown("<h1 style='text-align: center; font-size:48px;font-weight:bold;'>SL
 with st.expander("Considered Configurations"):
     st.image('./data/considered_configurations.png')
 
-connection_tech = st.checkbox('I know the connection technology I want to use')
+#connection_tech = st.checkbox('I know the connection technology I want to use')
 
 col11, col22 = st.columns(2)
 with col11:
@@ -43,9 +43,9 @@ with col11:
 with col22:
     second_choice = st.selectbox('Select Substrate #2',('C11', 'C12', 'C21', 'C22'))
 
-if connection_tech:
-    connection_choice = st.selectbox('Select connection technology',('Induction Welding', 'Ultrasonic Welding', 'Bolt', 'Adhesive','Hybrid'))
-    excel_file_loc="./data/SLS_Results_"+connection_choice+".xlsx"
+#if connection_tech:
+connection_choice = st.selectbox('Select connection technology',('Induction Welding', 'Ultrasonic Welding', 'Bolt', 'Adhesive','Hybrid'))
+excel_file_loc="./data/SLS_Results_"+connection_choice+".xlsx"
 st.write(excel_file_loc)
 #first_choice = st.selectbox('Select Sample #1',('C11', 'C12', 'C21', 'C22'))
 #second_choice = st.selectbox('Select Sample #2',('C11', 'C12', 'C21', 'C22'))
