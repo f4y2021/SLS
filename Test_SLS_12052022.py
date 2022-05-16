@@ -32,6 +32,9 @@ st.image('f4y_logo.png')
 
 st.markdown("<h1 style='text-align: center; font-size:48px;font-weight:bold;'>SLS Connection Analysis</h1>", unsafe_allow_html=True)
 
+with st.expander("Considered Configurations for Initial Study"):
+    st.image('./data/considered_configurations.png')
+
 with st.expander("I know the substrates I want to join"):
     connection_tech = st.checkbox('I know the connection technology I want to use')
     
