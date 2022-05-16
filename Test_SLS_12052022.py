@@ -34,7 +34,7 @@ st.markdown("<h1 style='text-align: center; font-size:48px;font-weight:bold;'>SL
 
 with st.expander("I know the substrates I want to join"):
     connection_tech = st.checkbox('I know the connection technology I want to use')
-    if connection_tech
+    if connection_tech:
         connection_choice = st.selectbox('Select connection technology',('Induction Welding', 'Ultrasonic Welding', 'Bolted', 'Adhesive Bonding','Hybrid Adhesive-Bolt'))
     col11, col22 = st.columns(2)
     with col11:
