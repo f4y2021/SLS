@@ -69,20 +69,19 @@ adhesive_excel_file_loc="./data/SLS_Results_Adhesive.xlsx"
 
 if run_button:
     if no_connection_tech:
-        df_bolt=pd.read_excel(bolt_excel_file_loc,sheet_name=graph_select,header=0,names=["S1_d","S1_f","S2_d","S2_f","S3_d","S3_f","S4_d","S4_f","S5_d","S5_f"])
-        df_bolt = df_bolt.dropna()
-        df_bolt['S_d_bolt']=df_bolt[['S1_d','S2_d','S3_d','S4_d','S5_d']].mean(axis=1)
-        df_bolt['S_f_bolt']=df_bolt[['S1_f','S2_f','S3_f','S4_f','S5_f']].mean(axis=1)
         
-        df_hybrid=pd.read_excel(hybrid_excel_file_loc,sheet_name=graph_select,header=0,names=["S1_d","S1_f","S2_d","S2_f","S3_d","S3_f","S4_d","S4_f","S5_d","S5_f"])
-        df_hybrid = df_hybrid.dropna()
-        df_hybrid['S_d_hybrid']=df_hybrid[['S1_d','S2_d','S3_d','S4_d','S5_d']].mean(axis=1)
-        df_hybrid['S_f_hybrid']=df_hybrid[['S1_f','S2_f','S3_f','S4_f','S5_f']].mean(axis=1)
+        def arranjar(file_loc,sheet_loc,name)
+            df_func=pd.read_excel(file_loc,sheet_name=sheet_loc,header=0,names=["S1_d","S1_f","S2_d","S2_f","S3_d","S3_f","S4_d","S4_f","S5_d","S5_f"])
+            df_func = df_func.dropna(axis=0)
+            df_func['S_d_'+name]=df_func[['S1_d','S2_d','S3_d','S4_d','S5_d']].mean(axis=1)
+            df_func['S_f_'+name]=df_func[['S1_f','S2_f','S3_f','S4_f','S5_f']].mean(axis=1)
         
-        df_adhesive=pd.read_excel(adhesive_excel_file_loc,sheet_name=graph_select,header=0,names=["S1_d","S1_f","S2_d","S2_f","S3_d","S3_f","S4_d","S4_f","S5_d","S5_f"])
-        df_adhesive = df_adhesive.dropna()
-        df_adhesive['S_d_hybrid']=df_adhesive[['S1_d','S2_d','S3_d','S4_d','S5_d']].mean(axis=1)
-        df_adhesive['S_f_hybrid']=df_adhesive[['S1_f','S2_f','S3_f','S4_f','S5_f']].mean(axis=1)
+            return df_func
+        
+        df_bolt=arranjar(bolt_excel_file_loc,graph_select,"bolt")
+        df_hybrid=arranjar(hybrid_excel_file_loc,graph_select,"hybrid")
+        df_adhesive=arranjar(adhesive_excel_file_loc,graph_select,"adhesive")
+        
     else:
         df_aux=pd.read_excel(excel_file_loc,sheet_name=graph_select,header=0,names=["S1_d","S1_f","S2_d","S2_f","S3_d","S3_f","S4_d","S4_f","S5_d","S5_f"])
 
