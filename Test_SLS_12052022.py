@@ -56,59 +56,57 @@ excel_file_loc="./data/SLS_Results_"+connection_choice+".xlsx"
 graph_select=first_choice+"_"+second_choice
 st.write('You selected: ', connection_choice,'between',first_choice,'and',second_choice)
 
-connection_tech = st.checkbox('Not Sure Which Connection Technology I Want to Use')
+no_connection_tech = st.checkbox('Not Sure Which Connection Technology I Want to Use')
 
 col111, col222, col333 = st.columns(3)
 
 with col222:
     run_button=st.button("Run")
 
+bolt_excel_file_loc="./data/SLS_Results_Bolt.xlsx"
+hybrid_excel_file_loc="./data/SLS_Results_Hybrid.xlsx"
+adhesive_excel_file_loc="./data/SLS_Results_Adhesive.xlsx"
 
 if run_button:
+    if no_connection_tech:
+        df_bolt=pd.read_excel(bolt_excel_file_loc,sheet_name=graph_select,header=0,names=["S1_d","S1_f","S2_d","S2_f","S3_d","S3_f","S4_d","S4_f","S5_d","S5_f"])
+        df_bolt = df_bolt.dropna()
+        df_bolt['S_d_bolt']=df_bolt[['S1_d','S2_d','S3_d','S4_d','S5_d']].mean(axis=1)
+        df_bolt['S_f_bolt']=df_bolt[['S1_f','S2_f','S3_f','S4_f','S5_f']].mean(axis=1)
+        
+        df_hybrid=pd.read_excel(hybrid_excel_file_loc,sheet_name=graph_select,header=0,names=["S1_d","S1_f","S2_d","S2_f","S3_d","S3_f","S4_d","S4_f","S5_d","S5_f"])
+        df_hybrid = df_hybrid.dropna()
+        df_hybrid['S_d_hybrid']=df_hybrid[['S1_d','S2_d','S3_d','S4_d','S5_d']].mean(axis=1)
+        df_hybrid['S_f_hybrid']=df_hybrid[['S1_f','S2_f','S3_f','S4_f','S5_f']].mean(axis=1)
+        
+        df_adhesive=pd.read_excel(adhesive_excel_file_loc,sheet_name=graph_select,header=0,names=["S1_d","S1_f","S2_d","S2_f","S3_d","S3_f","S4_d","S4_f","S5_d","S5_f"])
+        df_adhesive = df_adhesive.dropna()
+        df_adhesive['S_d_hybrid']=df_adhesive[['S1_d','S2_d','S3_d','S4_d','S5_d']].mean(axis=1)
+        df_adhesive['S_f_hybrid']=df_adhesive[['S1_f','S2_f','S3_f','S4_f','S5_f']].mean(axis=1)
+    else:
+        df_aux=pd.read_excel(excel_file_loc,sheet_name=graph_select,header=0,names=["S1_d","S1_f","S2_d","S2_f","S3_d","S3_f","S4_d","S4_f","S5_d","S5_f"])
 
-    df_aux=pd.read_excel(excel_file_loc,sheet_name=graph_select,header=0,names=["S1_d","S1_f","S2_d","S2_f","S3_d","S3_f","S4_d","S4_f","S5_d","S5_f"])
+        df_chosen=df_aux.dropna()
+        with st.expander("DataFrame"):
+            st.dataframe(df_chosen)
+        avg_max_load=(df_chosen["S1_f"].max()+df_chosen["S2_f"].max()+df_chosen["S3_f"].max()+df_chosen["S4_f"].max()+df_chosen["S5_f"].max())/5
+        avg_max_disp=(df_chosen["S1_d"].max()+df_chosen["S2_d"].max()+df_chosen["S3_d"].max()+df_chosen["S4_d"].max()+df_chosen["S5_d"].max())/5
+        avg_lap_shear=(df_chosen["S1_f"].max()+df_chosen["S2_f"].max()+df_chosen["S3_f"].max()+df_chosen["S4_f"].max()+df_chosen["S5_f"].max())/(5*area)
+        fig = go.Figure()
 
-    df_chosen=df_aux.dropna()
-    with st.expander("DataFrame"):
-        st.dataframe(df_chosen)
-    avg_max_load=(df_chosen["S1_f"].max()+df_chosen["S2_f"].max()+df_chosen["S3_f"].max()+df_chosen["S4_f"].max()+df_chosen["S5_f"].max())/5
-    avg_max_disp=(df_chosen["S1_d"].max()+df_chosen["S2_d"].max()+df_chosen["S3_d"].max()+df_chosen["S4_d"].max()+df_chosen["S5_d"].max())/5
-    avg_lap_shear=(df_chosen["S1_f"].max()+df_chosen["S2_f"].max()+df_chosen["S3_f"].max()+df_chosen["S4_f"].max()+df_chosen["S5_f"].max())/(5*area)
-    fig = go.Figure()
+        for i in range (1,6):
+            col_name_d = "S"+str(i)+"_d"
+            col_name_f = "S"+str(i)+"_f"
+            fig.add_trace(go.Scatter(x=df_chosen[col_name_d], y=df_chosen[col_name_f],
+                          mode='lines',name="S"+str(i)))
+        fig.update_layout(title='SLS Results',
+                       xaxis_title='Displacement (mm)',
+                       yaxis_title='Load (N)',template="seaborn")
+        st.plotly_chart(fig)
 
-    for i in range (1,6):
-        col_name_d = "S"+str(i)+"_d"
-        col_name_f = "S"+str(i)+"_f"
-        fig.add_trace(go.Scatter(x=df_chosen[col_name_d], y=df_chosen[col_name_f],
-                      mode='lines',name="S"+str(i)))
-    fig.update_layout(title='SLS Results',
-                   xaxis_title='Displacement (mm)',
-                   yaxis_title='Load (N)',template="seaborn")
-    st.plotly_chart(fig)
-
-    col1, col2, col3 = st.columns(3)
-    col1.metric("Average Max Load (N)", round(avg_max_load, 2))
-    col2.metric("Average Max Displacement (mm)",round(avg_max_disp, 2))
-    col3.metric("Average Lap Shear Strength (MPa)",round(avg_lap_shear, 2))
+        col1, col2, col3 = st.columns(3)
+        col1.metric("Average Max Load (N)", round(avg_max_load, 2))
+        col2.metric("Average Max Displacement (mm)",round(avg_max_disp, 2))
+        col3.metric("Average Lap Shear Strength (MPa)",round(avg_lap_shear, 2))
     
-    document = Document()
-
-    document.add_heading('Document Title', 0)
-
-    p = document.add_paragraph('A plain paragraph having some ')
-    p.add_run('bold').bold = True
-    p.add_run(' and some ')
-    p.add_run('italic.').italic = True
-
-    document.add_heading('Heading, level 1', level=1)
-    document.add_paragraph('Intense quote', style='Intense Quote')
-
-    document.add_paragraph(
-        'first item in unordered list', style='List Bullet'
-    )
-    document.add_paragraph(
-        'first item in ordered list', style='List Number'
-    )
-    
-    document.save('./data/demo.docx')    
     
