@@ -47,7 +47,7 @@ with col22:
 
 col111, col222= st.columns(2)
 with col111:
-    connection_choice = st.selectbox('Select connection technology',('Bolt', 'Adhesive','Hybrid'))
+    connection_choice = st.selectbox('Select connection technology',('Bolt', 'Adhesive','Hybrid'),disabled=connection_tech)
 with col222:
     connection_tech = st.checkbox('I dont know the connection technology I want to use')
 
