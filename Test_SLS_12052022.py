@@ -53,10 +53,9 @@ excel_file_loc="./data/SLS_Results_"+connection_choice+".xlsx"
 #first_choice = st.selectbox('Select Sample #1',('C11', 'C12', 'C21', 'C22'))
 #second_choice = st.selectbox('Select Sample #2',('C11', 'C12', 'C21', 'C22'))
 graph_select=first_choice+"_"+second_choice
-
+st.write('You selected: ', connection_choice,'between',first_choice,'and',second_choice)
 col111, col222, col333 = st.columns(3)
 with col222:
-    st.write('You selected: ', connection_choice,'between',first_choice,'and',second_choice)
     run_button=st.button("Run")
 
 
