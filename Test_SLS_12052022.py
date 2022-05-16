@@ -44,7 +44,7 @@ with col22:
     second_choice = st.selectbox('Select Substrate #2',('C11', 'C12', 'C21', 'C22'))
 
 #if connection_tech:
-connection_choice = st.selectbox('Select connection technology',('Induction Welding', 'Ultrasonic Welding', 'Bolt', 'Adhesive','Hybrid'))
+connection_choice = st.selectbox('Select connection technology',('Bolt', 'Adhesive','Hybrid'))
 excel_file_loc="./data/SLS_Results_"+connection_choice+".xlsx"
 st.write(excel_file_loc)
 #first_choice = st.selectbox('Select Sample #1',('C11', 'C12', 'C21', 'C22'))
