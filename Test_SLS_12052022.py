@@ -34,14 +34,15 @@ st.markdown("<h1 style='text-align: center; font-size:48px;font-weight:bold;'>SL
 
 with st.expander("I know the substrates I want to join"):
     connection_tech = st.checkbox('I know the connection technology I want to use')
-    if connection_tech:
-        connection_choice = st.selectbox('Select connection technology',('Induction Welding', 'Ultrasonic Welding', 'Bolted', 'Adhesive Bonding','Hybrid Adhesive-Bolt'))
+    
     col11, col22 = st.columns(2)
     with col11:
         first_choice = st.selectbox('Select Substrate #1',('C11', 'C12', 'C21', 'C22'))
     with col22:
         second_choice = st.selectbox('Select Substrate #2',('C11', 'C12', 'C21', 'C22'))
 
+    if connection_tech:
+        connection_choice = st.selectbox('Select connection technology',('Induction Welding', 'Ultrasonic Welding', 'Bolted', 'Adhesive Bonding','Hybrid Adhesive-Bolt'))
     #first_choice = st.selectbox('Select Sample #1',('C11', 'C12', 'C21', 'C22'))
     #second_choice = st.selectbox('Select Sample #2',('C11', 'C12', 'C21', 'C22'))
     graph_select=first_choice+"_"+second_choice
