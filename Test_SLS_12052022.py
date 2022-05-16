@@ -6,7 +6,7 @@ ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."""
 
 import openpyxl
-
+from io import BytesIO
 import plotly.express as px 
 import plotly.graph_objects as go
 import matplotlib.pyplot as plt
