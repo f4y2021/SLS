@@ -102,5 +102,5 @@ if run_button:
         'first item in ordered list', style='List Number'
     )
     
-    streamtest = document.save
-    st.download_button("Download Final Excel File",streamtest,'Tabela_Final')
+
+    st.download_button("Download Final Excel File",document,'Tabela_Final.docx')
