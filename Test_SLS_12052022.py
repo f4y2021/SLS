@@ -46,7 +46,6 @@ with col22:
 #if connection_tech:
 connection_choice = st.selectbox('Select connection technology',('Bolt', 'Adhesive','Hybrid'))
 excel_file_loc="./data/SLS_Results_"+connection_choice+".xlsx"
-st.write(excel_file_loc)
 #first_choice = st.selectbox('Select Sample #1',('C11', 'C12', 'C21', 'C22'))
 #second_choice = st.selectbox('Select Sample #2',('C11', 'C12', 'C21', 'C22'))
 graph_select=first_choice+"_"+second_choice
@@ -56,7 +55,7 @@ run_button=st.button("Run")
 
 if run_button:
 
-  df_aux=pd.read_excel("./data/SLS_Adhesive_Results3.xlsx",sheet_name=graph_select,usecols= [0,1,3,4,6,7,9,10,12,13],header=0,names=["S1_d","S1_f","S2_d","S2_f","S3_d","S3_f","S4_d","S4_f","S5_d","S5_f"])
+  df_aux=pd.read_excel(excel_file_loc,sheet_name=graph_select,header=0,names=["S1_d","S1_f","S2_d","S2_f","S3_d","S3_f","S4_d","S4_f","S5_d","S5_f"])
 
   df_chosen=df_aux.dropna()
   st.dataframe(df_chosen)
