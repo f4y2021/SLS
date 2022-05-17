@@ -42,6 +42,13 @@ with st.expander("Specimen Geometry"):
 
 #connection_tech = st.checkbox('I know the connection technology I want to use')
 
+display = ("male", "female")
+
+options = list(range(len(display)))
+
+value = st.selectbox("gender", options, format_func=lambda x: display[x])
+
+st.write(value)
 
 col11, col22 = st.columns(2)
 with col11:
