@@ -26,15 +26,41 @@ st.set_page_config(page_title="SLS Tests",page_icon="⏩")
 m = st.markdown("""
 <style>
 div.stButton > button:first-child {
-    font-size:16px;font-weight:bold;height:2em;width:7em;
+    background-color: #ce1126;
+    color: white;
+    height: 3em;
+    width: 12em;
+    border-radius:10px;
+    border:3px solid #000000;
+    font-size:20px;
+    font-weight: bold;
+    margin: auto;
+    display: block;
 }
+
+div.stButton > button:hover {
+	background:linear-gradient(to bottom, #ce1126 5%, #ff5a5a 100%);
+	background-color:#ce1126;
+}
+
+div.stButton > button:active {
+	position:relative;
+	top:3px;
+}
+
 </style>""", unsafe_allow_html=True)
+
+
 
 st.image('f4y_logo.png')
 
 #st.markdown("<h1 style='text-align: center; font-size:48px;font-weight:bold;'>SLS Connection Analysis</h1>", unsafe_allow_html=True)
 
+with st.expander("Considered Configurations"):
+    st.image('./data/considered_configurations.png')
 
+with st.expander("Specimen Geometry"):
+    st.image('./data/specimen_geometry.png')
 
 
 #connection_tech = st.checkbox('I know the connection technology I want to use')
@@ -75,11 +101,7 @@ bolt_excel_file_loc="./data/SLS_Results_Bolt.xlsx"
 hybrid_excel_file_loc="./data/SLS_Results_Hybrid.xlsx"
 adhesive_excel_file_loc="./data/SLS_Results_Adhesive.xlsx"
 
-with st.expander("Considered Configurations"):
-    st.image('./data/considered_configurations.png')
 
-with st.expander("Specimen Geometry"):
-    st.image('./data/specimen_geometry.png')
 
 if run_button:
     
