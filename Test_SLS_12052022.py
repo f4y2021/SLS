@@ -81,7 +81,7 @@ adhesive_excel_file_loc="./data/SLS_Results_Adhesive.xlsx"
 if run_button:
     
     my_bar = st.progress(0)
-    for percent_complete in range(1,100,20):
+    for percent_complete in range(-1,100,20):
         time.sleep(0.1)
         my_bar.progress(percent_complete + 1)
 
