@@ -58,7 +58,7 @@ area=312.5
 
 graph_select=first_choice+"_"+second_choice
 
-no_connection_tech = st.checkbox('Not Sure Which Connection Technology I Want to Use')
+#no_connection_tech = st.checkbox('Not Sure Which Connection Technology I Want to Use')
 
 st.write('You Selected:')
 if no_connection_tech:
