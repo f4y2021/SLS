@@ -84,7 +84,7 @@ if run_button:
     for percent_complete in range(10):
         time.sleep(0.1)
         my_bar.progress(percent_complete + 1)
-    st.snow()
+
     if not connection_tech:
         
         def arranjar(file_loc,sheet_loc,name):
@@ -158,4 +158,4 @@ if run_button:
         col2.metric("Average Max Displacement (mm)",round(avg_max_disp, 2))
         col3.metric("Average Lap Shear Strength (MPa)",round(avg_lap_shear, 2))
     
-    
+st.snow()
