@@ -81,10 +81,10 @@ adhesive_excel_file_loc="./data/SLS_Results_Adhesive.xlsx"
 if run_button:
     my_bar = st.progress(0)
 
-    for percent_complete in range(100):
+    for percent_complete in range(10):
         time.sleep(0.1)
         my_bar.progress(percent_complete + 1)
-    st.snow
+    st.snow()
     if not connection_tech:
         
         def arranjar(file_loc,sheet_loc,name):
