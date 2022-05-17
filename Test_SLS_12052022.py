@@ -34,11 +34,12 @@ st.image('f4y_logo.png')
 
 #st.markdown("<h1 style='text-align: center; font-size:48px;font-weight:bold;'>SLS Connection Analysis</h1>", unsafe_allow_html=True)
 
-with st.expander("Considered Configurations"):
-    st.image('./data/considered_configurations.png')
-    
-with st.expander("Specimen Geometry"):
-    st.image('./data/specimen_geometry.png')
+with st.sidebar:
+    with st.expander("Considered Configurations"):
+        st.image('./data/considered_configurations.png')
+
+    with st.expander("Specimen Geometry"):
+        st.image('./data/specimen_geometry.png')
 
 #connection_tech = st.checkbox('I know the connection technology I want to use')
 
