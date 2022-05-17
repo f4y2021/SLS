@@ -87,7 +87,7 @@ if run_button:
         df_global = pd.concat([df_bolt[['S_d_bolt', 'S_f_bolt']].copy(), df_hybrid[['S_d_hybrid', 'S_f_hybrid']].copy(),df_adhesive[['S_d_adhesive', 'S_f_adhesive']].copy()], axis=1)
         st.dataframe(df_global)
         for names in ['bolt','hybrid','adhesive']:
-            fig.add_trace(go.Scatter(x=df_global['S_d_'+names], y=df_global['S_f_'+name],
+            fig.add_trace(go.Scatter(x=df_global['S_d_'+names], y=df_global['S_f_'+names],
                           mode='lines',name=names))
         fig.update_layout(title='SLS Results',
                    xaxis_title='Displacement (mm)',
