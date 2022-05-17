@@ -140,6 +140,7 @@ if run_button:
 
         col1, col2, col3 = st.columns(3)
         col1.metric("Average Max Load (N)", round(avg_max_load, 2))
+        col2.header(connection_choice)
         col2.metric("Average Max Displacement (mm)",round(avg_max_disp, 2))
         col3.metric("Average Lap Shear Strength (MPa)",round(avg_lap_shear, 2))
     
