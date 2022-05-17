@@ -29,9 +29,9 @@ div.stButton > button:first-child {
     background-color: #82FFFC;
     color: black;
     height: 3em;
-    width: 12em;
-    border-radius:2px;
-    border:1px solid #000000;
+    width: 10em;
+    border-radius:3px;
+    border:0.5px solid #000000;
     font-size:20px;
     font-weight: bold;
     margin: auto;
