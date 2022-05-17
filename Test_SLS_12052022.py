@@ -39,6 +39,19 @@ with st.expander("Considered Configurations"):
 
 #connection_tech = st.checkbox('I know the connection technology I want to use')
 
+
+CHOICES = {1: "Glass Fibre Photocurable Acrylate Thermoset", 2: "Glass Fibre Epoxy Resin Thermoset ", 3: "Carbon Fibre Hot-Stamped Thermoplastic", 4:"Glass Fibre 3D Printed Thermoplastic
+"}
+
+
+def format_func(option):
+    return CHOICES[option]
+
+
+option = st.selectbox("Select option", options=list(CHOICES.keys()), format_func=format_func)
+
+st.write(option)
+
 col11, col22 = st.columns(2)
 with col11:
     first_choice = st.selectbox('Select Substrate #1',('C11', 'C12', 'C21', 'C22'))
