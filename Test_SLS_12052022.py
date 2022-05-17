@@ -49,15 +49,11 @@ connection_tech=st.checkbox('I know Which Connection Technology I Want to Use')
 
 if connection_tech:
     connection_choice = st.selectbox('Select connection technology',('Bolt', 'Adhesive','Hybrid'))
-
+    excel_file_loc="./data/SLS_Results_"+connection_choice+".xlsx"
+    
 area=312.5
-excel_file_loc="./data/SLS_Results_"+connection_choice+".xlsx"
-#first_choice = st.selectbox('Select Sample #1',('C11', 'C12', 'C21', 'C22'))
-#second_choice = st.selectbox('Select Sample #2',('C11', 'C12', 'C21', 'C22'))
 
 graph_select=first_choice+"_"+second_choice
-
-
 
 no_connection_tech = st.checkbox('Not Sure Which Connection Technology I Want to Use')
 
