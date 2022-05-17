@@ -59,7 +59,8 @@ graph_select=first_choice+"_"+second_choice
 
 no_connection_tech = st.checkbox('Not Sure Which Connection Technology I Want to Use')
 if no_connection_tech:
-    st.write('You selected: All Connection Technologies between ', first_choice,'and',second_choice)
+    #st.write('You selected: All Connection Technologies between ', first_choice,'and',second_choice)
+    st.markdown("<h2 style='text-align: center; color: black;'>You selected: All Connection Technologies between ', first_choice,'and',second_choice </h2>", unsafe_allow_html=True)
 else:
     st.write('You selected: ', connection_choice,'between',first_choice,'and',second_choice)
 
