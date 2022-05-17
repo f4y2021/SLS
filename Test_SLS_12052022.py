@@ -47,7 +47,7 @@ def format_func(option):
     return CHOICES[option]
 
 
-option = st.selectbox("Select option", options=list(CHOICES.keys()), format_func=format_func)
+option = st.selectbox("Select option", options=('C11', 'C12', 'C21', 'C22'), format_func=("Glass Fibre Photocurable Acrylate Thermoset", "Glass Fibre Epoxy Resin Thermoset", "Carbon Fibre Hot-Stamped Thermoplastic", "Glass Fibre 3D Printed Thermoplastic")
 
 st.write(option)
 
