@@ -45,8 +45,10 @@ with col11:
 with col22:
     second_choice = st.selectbox('Select Substrate #2',('C11', 'C12', 'C21', 'C22'))
 
+connection_tech=st.checkbox('I know Which Connection Technology I Want to Use')
 
-connection_choice = st.selectbox('Select connection technology',('Bolt', 'Adhesive','Hybrid'))
+if connection_tech:
+    connection_choice = st.selectbox('Select connection technology',('Bolt', 'Adhesive','Hybrid'))
 
 area=312.5
 excel_file_loc="./data/SLS_Results_"+connection_choice+".xlsx"
@@ -75,7 +77,7 @@ hybrid_excel_file_loc="./data/SLS_Results_Hybrid.xlsx"
 adhesive_excel_file_loc="./data/SLS_Results_Adhesive.xlsx"
 
 if run_button:
-    if no_connection_tech:
+    if not connection_tech:
         
         def arranjar(file_loc,sheet_loc,name):
             df_func=pd.read_excel(file_loc,sheet_name=sheet_loc,header=0,names=["S1_d","S1_f","S2_d","S2_f","S3_d","S3_f","S4_d","S4_f","S5_d","S5_f"])
