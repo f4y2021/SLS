@@ -31,7 +31,7 @@ div.stButton > button:first-child {
     height: 3em;
     width: 12em;
     border-radius:2px;
-    border:3px solid #000000;
+    border:1px solid #000000;
     font-size:20px;
     font-weight: bold;
     margin: auto;
@@ -39,7 +39,7 @@ div.stButton > button:first-child {
 }
 
 div.stButton > button:hover {
-	background:linear-gradient(to bottom, #82FFFC 5%, #82F4FF 100%);
+	background:linear-gradient(to bottom, #82FFFC 5%, #0C65E6 100%);
 	background-color:#82FFFC;
 }
 
