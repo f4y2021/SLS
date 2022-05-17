@@ -40,8 +40,7 @@ with st.expander("Considered Configurations"):
 #connection_tech = st.checkbox('I know the connection technology I want to use')
 
 
-CHOICES = {1: "Glass Fibre Photocurable Acrylate Thermoset", 2: "Glass Fibre Epoxy Resin Thermoset ", 3: "Carbon Fibre Hot-Stamped Thermoplastic", 4:"Glass Fibre 3D Printed Thermoplastic
-"}
+CHOICES = {1: "Glass Fibre Photocurable Acrylate Thermoset", 2: "Glass Fibre Epoxy Resin Thermoset", 3: "Carbon Fibre Hot-Stamped Thermoplastic", 4:"Glass Fibre 3D Printed Thermoplastic"}
 
 
 def format_func(option):
