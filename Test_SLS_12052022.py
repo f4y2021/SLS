@@ -79,9 +79,12 @@ hybrid_excel_file_loc="./data/SLS_Results_Hybrid.xlsx"
 adhesive_excel_file_loc="./data/SLS_Results_Adhesive.xlsx"
 
 if run_button:
-    with st.spinner('Wait for it...'):
-        time.sleep(5)
-    st.success('Done!')
+    my_bar = st.progress(0)
+
+    for percent_complete in range(100):
+        time.sleep(0.1)
+        my_bar.progress(percent_complete + 1)
+    st.snow
     if not connection_tech:
         
         def arranjar(file_loc,sheet_loc,name):
