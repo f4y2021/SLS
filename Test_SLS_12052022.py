@@ -105,14 +105,17 @@ if run_button:
         col1.subheader("Bolt")
         col1.metric("Max Load (N)", round(df_global['S_f_bolt'].max(), 2))
         col1.metric("Max Displacement (mm)", round(df_global['S_d_bolt'].max(), 2))
+        col1.metric("Lap Shear Strength (MPa)", round(df_global['S_f_bolt'].max()/area, 2))
         
         col2.subheader("Hybrid")
         col2.metric("Max Load (N)",round(df_global['S_f_hybrid'].max(), 2))
         col2.metric("Max Displacement (mm)",round(df_global['S_d_hybrid'].max(), 2))
+        col2.metric("Lap Shear Strength (MPa)", round(df_global['S_f_hybrid'].max()/area, 2))
         
         col3.subheader("Adhesive")
         col3.metric("Max Load (N)",round(df_global['S_f_adhesive'].max(), 2))
         col3.metric("Max Displacement (mm)",round(df_global['S_d_adhesive'].max(), 2))
+        col3.metric("Lap Shear Strength (MPa)", round(df_global['S_f_adhesive'].max()/area, 2))
         
     else:
         df_aux=pd.read_excel(excel_file_loc,sheet_name=graph_select,header=0,names=["S1_d","S1_f","S2_d","S2_f","S3_d","S3_f","S4_d","S4_f","S5_d","S5_f"])
