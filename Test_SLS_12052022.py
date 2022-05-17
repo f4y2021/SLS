@@ -35,11 +35,7 @@ st.image('f4y_logo.png')
 #st.markdown("<h1 style='text-align: center; font-size:48px;font-weight:bold;'>SLS Connection Analysis</h1>", unsafe_allow_html=True)
 
 
-with st.expander("Considered Configurations"):
-    st.image('./data/considered_configurations.png')
 
-with st.expander("Specimen Geometry"):
-    st.image('./data/specimen_geometry.png')
 
 #connection_tech = st.checkbox('I know the connection technology I want to use')
 
@@ -78,6 +74,12 @@ with col222:
 bolt_excel_file_loc="./data/SLS_Results_Bolt.xlsx"
 hybrid_excel_file_loc="./data/SLS_Results_Hybrid.xlsx"
 adhesive_excel_file_loc="./data/SLS_Results_Adhesive.xlsx"
+
+with st.expander("Considered Configurations"):
+    st.image('./data/considered_configurations.png')
+
+with st.expander("Specimen Geometry"):
+    st.image('./data/specimen_geometry.png')
 
 if run_button:
     
