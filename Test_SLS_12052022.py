@@ -27,10 +27,10 @@ m = st.markdown("""
 <style>
 div.stButton > button:first-child {
     background-color: #82FFFC;
-    color: white;
+    color: black;
     height: 3em;
     width: 12em;
-    border-radius:10px;
+    border-radius:2px;
     border:3px solid #000000;
     font-size:20px;
     font-weight: bold;
