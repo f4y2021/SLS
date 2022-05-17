@@ -42,14 +42,6 @@ with st.expander("Specimen Geometry"):
 
 #connection_tech = st.checkbox('I know the connection technology I want to use')
 
-display = ("Photocurable Acrylyte Resin", "Epoxy Resin")
-
-options =("C11","C12")
-
-value = st.selectbox("gender", options, format_func=lambda x: display[x])
-
-st.write(value)
-
 col11, col22 = st.columns(2)
 with col11:
     first_choice = st.selectbox('Select Substrate #1',('C11', 'C12', 'C21', 'C22'))
