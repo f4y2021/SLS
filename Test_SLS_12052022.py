@@ -42,7 +42,7 @@ with st.expander("Specimen Geometry"):
 
 #connection_tech = st.checkbox('I know the connection technology I want to use')
 
-display = ("male", "female")
+display = ("Photocurable Acrylyte Resin", "Epoxy Resin")
 
 options = list(range(len(display)))
 
