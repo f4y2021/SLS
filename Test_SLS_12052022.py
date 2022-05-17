@@ -158,4 +158,3 @@ if run_button:
         col2.metric("Average Max Displacement (mm)",round(avg_max_disp, 2))
         col3.metric("Average Lap Shear Strength (MPa)",round(avg_lap_shear, 2))
     
-st.snow()
