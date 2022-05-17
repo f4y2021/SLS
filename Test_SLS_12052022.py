@@ -82,11 +82,11 @@ if run_button:
         df_hybrid=arranjar(hybrid_excel_file_loc,graph_select,"hybrid")
         df_adhesive=arranjar(adhesive_excel_file_loc,graph_select,"adhesive")
         
-        horizontal_concat = pd.concat([df_bolt[['S_d_bolt', 'S_f_bolt']].copy(), df_hybrid[['S_d_hybrid', 'S_f_hybrid']].copy(),df_adhesive[['S_d_adhesive', 'S_f_adhesive']].copy()], axis=1)
-        st.dataframe(horizontal_concat)
+        df_global = pd.concat([df_bolt[['S_d_bolt', 'S_f_bolt']].copy(), df_hybrid[['S_d_hybrid', 'S_f_hybrid']].copy(),df_adhesive[['S_d_adhesive', 'S_f_adhesive']].copy()], axis=1)
+        st.dataframe(df_global)
         for names in ['bolt','hybrid','adhesive']:
-            fig.add_trace(go.Scatter(x=df_chosen[col_name_d], y=df_chosen[col_name_f],
-                          mode='lines',name="S"+str(i)))
+            fig.add_trace(go.Scatter(x=df_global['S_d_'+names], y=df_global['S_f_'+name],
+                          mode='lines',name=names))
         fig.update_layout(title='SLS Results',
                    xaxis_title='Displacement (mm)',
                    yaxis_title='Load (N)',template="seaborn")
