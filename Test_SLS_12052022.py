@@ -32,7 +32,7 @@ div.stButton > button:first-child {
 
 st.image('f4y_logo.png')
 
-st.markdown("<h1 style='text-align: center; font-size:48px;font-weight:bold;'>SLS Connection Analysis</h1>", unsafe_allow_html=True)
+#st.markdown("<h1 style='text-align: center; font-size:48px;font-weight:bold;'>SLS Connection Analysis</h1>", unsafe_allow_html=True)
 
 with st.expander("Considered Configurations"):
     st.image('./data/considered_configurations.png')
