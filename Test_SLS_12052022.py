@@ -84,7 +84,7 @@ if run_button:
     for percent_complete in range(-1,100,20):
         time.sleep(0.1)
         my_bar.progress(percent_complete + 1)
-
+    st.balloons()
     if not connection_tech:
         
         def arranjar(file_loc,sheet_loc,name):
