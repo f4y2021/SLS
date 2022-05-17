@@ -79,9 +79,18 @@ if run_button:
             return df_func
         
         df_bolt=arranjar(bolt_excel_file_loc,graph_select,"bolt")
-        st.dataframe(df_bolt)
         df_hybrid=arranjar(hybrid_excel_file_loc,graph_select,"hybrid")
         df_adhesive=arranjar(adhesive_excel_file_loc,graph_select,"adhesive")
+        
+        horizontal_concat = pd.concat([df_bolt[['S_d_bolt', 'S_f_bolt']].copy(), df_hybrid[['S_d_hybrid', 'S_f_hybrid']].copy(),df_adhesive[['S_d_adhesive', 'S_f_adhesive']].copy()], axis=1)
+        st.dataframe(horizontal_concat)
+        for names in ['bolt','hybrid','adhesive']:
+            fig.add_trace(go.Scatter(x=df_chosen[col_name_d], y=df_chosen[col_name_f],
+                          mode='lines',name="S"+str(i)))
+        fig.update_layout(title='SLS Results',
+                   xaxis_title='Displacement (mm)',
+                   yaxis_title='Load (N)',template="seaborn")
+        st.plotly_chart(fig)
         
     else:
         df_aux=pd.read_excel(excel_file_loc,sheet_name=graph_select,header=0,names=["S1_d","S1_f","S2_d","S2_f","S3_d","S3_f","S4_d","S4_f","S5_d","S5_f"])
