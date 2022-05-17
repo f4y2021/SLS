@@ -44,7 +44,7 @@ with st.expander("Specimen Geometry"):
 
 display = ("Photocurable Acrylyte Resin", "Epoxy Resin")
 
-options = list['C11','C12']
+options = list(("C11","C12"))
 
 value = st.selectbox("gender", options, format_func=lambda x: display[x])
 
