@@ -82,6 +82,8 @@ if run_button:
         df_hybrid=arranjar(hybrid_excel_file_loc,graph_select,"hybrid")
         df_adhesive=arranjar(adhesive_excel_file_loc,graph_select,"adhesive")
         
+        fig = go.Figure()
+        
         df_global = pd.concat([df_bolt[['S_d_bolt', 'S_f_bolt']].copy(), df_hybrid[['S_d_hybrid', 'S_f_hybrid']].copy(),df_adhesive[['S_d_adhesive', 'S_f_adhesive']].copy()], axis=1)
         st.dataframe(df_global)
         for names in ['bolt','hybrid','adhesive']:
