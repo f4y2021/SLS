@@ -26,7 +26,7 @@ st.set_page_config(page_title="SLS Tests",page_icon="⏩")
 m = st.markdown("""
 <style>
 div.stButton > button:first-child {
-    background-color: #ce1126;
+    background-color: #82FFFC;
     color: white;
     height: 3em;
     width: 12em;
@@ -39,8 +39,8 @@ div.stButton > button:first-child {
 }
 
 div.stButton > button:hover {
-	background:linear-gradient(to bottom, #ce1126 5%, #ff5a5a 100%);
-	background-color:#ce1126;
+	background:linear-gradient(to bottom, #82FFFC 5%, #82F4FF 100%);
+	background-color:#82FFFC;
 }
 
 div.stButton > button:active {
