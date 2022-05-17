@@ -79,11 +79,11 @@ hybrid_excel_file_loc="./data/SLS_Results_Hybrid.xlsx"
 adhesive_excel_file_loc="./data/SLS_Results_Adhesive.xlsx"
 
 if run_button:
+    
     my_bar = st.progress(0)
-
-    for percent_complete in range(100):
+    for percent_complete in range(0,100,20):
         time.sleep(0.1)
-        my_bar.progress(percent_complete + 20)
+        my_bar.progress(percent_complete + 1)
 
     if not connection_tech:
         
