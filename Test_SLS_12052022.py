@@ -36,6 +36,9 @@ st.image('f4y_logo.png')
 
 with st.expander("Considered Configurations"):
     st.image('./data/considered_configurations.png')
+    
+with st.expander("Specimen Geometry"):
+    st.image('./data/specimen_geometry.png')
 
 #connection_tech = st.checkbox('I know the connection technology I want to use')
 
